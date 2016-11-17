@@ -407,7 +407,7 @@ with tf.Session() as sess:
         test_indices = test_indices[0:test_size]
 
         for start, end in training_batch:
-            sess.run(train_op, feed_dict={X: trX[start:end], Y: trY[start:end], keep_prob: 4.0})
+            sess.run(train_op, feed_dict={X: trX[start:end], Y: trY[start:end], keep_prob: 0.4})
 
         print(i, sess.run(accuracy, feed_dict={X: teX[test_indices], Y: teY[test_indices], keep_prob: 1.0}))
 
